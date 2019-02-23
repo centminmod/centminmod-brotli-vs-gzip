@@ -1,3 +1,14 @@
+Testing Centmin Mod Nginx gzip vs brotli compression levels for both
+
+* on the fly compression and
+* pre-compressed file compression at pigz level 11 zopfli gzip and brotli level 11 compression levels
+
+The following 3 files are tested
+
+* https://code.jquery.com/jquery-3.3.1.min.js served from http://localhost/jquery-3.3.1.min.js
+* https://use.fontawesome.com/releases/v5.7.2/css/all.css served from http://localhost/fontawesome.css
+* https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css served from http://localhost/bootstrap.min.css
+
 
 test results are saved to result.txt
 
