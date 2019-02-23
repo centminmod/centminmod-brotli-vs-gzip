@@ -2,7 +2,8 @@
 #################################################
 # centmin mod nginx brotli vs gzip testing
 #################################################
-users=10
+debug='n'
+users=50
 duration=2
 sleep=1
 
@@ -25,7 +26,7 @@ gziptests() {
   for url in $urls; do
     for l in {1..9}; do
     sleep $sleep;
-    echo -e "\ntest gzip_comp_level $l $precomp";
+    echo -e "\ntest-gzip_comp_level-${l} $precomp";
     sed -ie "s|BROTLI=.*|BROTLI='n'|" /usr/local/bin/curltest
     filename=$(basename $url)
     filepath="/usr/local/nginx/html/$filename"
@@ -33,11 +34,19 @@ gziptests() {
       pigz -11k $filepath >/dev/null 2>&1
     fi
     sed -i "s|gzip_comp_level .*|gzip_comp_level $l;|" /usr/local/nginx/conf/nginx.conf
-    grep gzip_comp_level /usr/local/nginx/conf/nginx.conf
+    if [[ "$debug" = [yY] ]]; then
+      grep gzip_comp_level /usr/local/nginx/conf/nginx.conf
+    fi
     ngxrestart >/dev/null 2>&1;
     /usr/local/bin/curltest gzip $url | sed -e 's|pressed size :|pressed-size:|g' -e 's|pressed size   :|pressed-size:|g';
-    echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url"
-    wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;
+    if [[ "$debug" = [yY] ]]; then
+      echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url"
+    fi
+    if [[ "$debug" = [yY] ]]; then
+      wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;
+    else
+      wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | grep -v 'Transfer' | column -t;
+    fi
     done;
     sed -i "s|gzip_comp_level .*|gzip_comp_level 5;|" /usr/local/nginx/conf/nginx.conf
     echo -e "reset defaults:"
@@ -54,7 +63,7 @@ brotlitests() {
   for url in $urls; do
     for l in {1..9}; do
     sleep $sleep;
-    echo -e "\ntest brotli_comp_level $l $precomp";
+    echo -e "\ntest-brotli_comp_level-${l} $precomp";
     sed -ie "s|BROTLI=.*|BROTLI='y'|" /usr/local/bin/curltest
     filename=$(basename $url)
     filepath="/usr/local/nginx/html/$filename"
@@ -62,11 +71,19 @@ brotlitests() {
       brotli -q 11 --force ${filepath} --output=${filepath}.br >/dev/null 2>&1
     fi
     sed -i "s|brotli_comp_level .*|brotli_comp_level $l;|" /usr/local/nginx/conf/brotli_inc.conf
-    grep brotli_comp_level /usr/local/nginx/conf/brotli_inc.conf
+    if [[ "$debug" = [yY] ]]; then
+      grep brotli_comp_level /usr/local/nginx/conf/brotli_inc.conf
+    fi
     ngxrestart >/dev/null 2>&1;
     /usr/local/bin/curltest br $url | sed -e 's|pressed size :|pressed-size:|g' -e 's|pressed size   :|pressed-size:|g';
-    echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url"
-    wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;
+    if [[ "$debug" = [yY] ]]; then
+      echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url"
+    fi
+    if [[ "$debug" = [yY] ]]; then
+      wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;
+    else
+      wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | grep -v 'Transfer' | column -t;
+    fi
     done;
     sed -i "s|brotli_comp_level .*|brotli_comp_level 5;|" /usr/local/nginx/conf/brotli_inc.conf
     echo -e "reset defaults:"

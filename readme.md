@@ -1,1217 +1,893 @@
 
 
 ```
-time ./test-br-vs-gzip.sh 
+./test-br-vs-gzip.sh 
 
-test gzip_comp_level 1 
-gzip_comp_level 1;
+test-gzip_comp_level-1 
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 12.79 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
 Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        1.12ms   1.17ms  16.74ms  96.40%
-Requests/sec:  1945.95
-Transfer/sec:  25.33MB
+Latency        12.56ms  5.97ms  33.02ms  74.53%
+Requests/sec:  2780.36
 
-test gzip_comp_level 2 
-gzip_comp_level 2;
+test-gzip_comp_level-2 
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 12.74 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
 Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        1.31ms   1.00ms  12.64ms  96.10%
-Requests/sec:  1583.89
-Transfer/sec:  20.54MB
+Latency        16.48ms  5.32ms  36.48ms  80.81%
+Requests/sec:  2849.82
 
-test gzip_comp_level 3 
-gzip_comp_level 3;
+test-gzip_comp_level-3 
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 12.51 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
-Thread-Stats   Avg      Stdev     Max     Stdev
-Latency        1.57ms   584.62us  7.97ms  94.69%
-Requests/sec:  1297.15
-Transfer/sec:  16.53MB
+Thread-Stats   Avg      Stdev   Max      Stdev
+Latency        18.15ms  6.16ms  40.82ms  76.46%
+Requests/sec:  2613.38
 
-test gzip_comp_level 4 
-gzip_comp_level 4;
+test-gzip_comp_level-4 
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 12.23 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
-Thread-Stats   Avg      Stdev     Max      Stdev
-Latency        1.92ms   816.20us  13.80ms  95.06%
-Requests/sec:  1068.32
-Transfer/sec:  13.32MB
+Thread-Stats   Avg      Stdev   Max      Stdev
+Latency        21.94ms  8.17ms  47.89ms  67.46%
+Requests/sec:  2144.58
 
-test gzip_comp_level 5 
-gzip_comp_level 5;
+test-gzip_comp_level-5 
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.52 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
 Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        1.85ms   0.93ms  10.53ms  94.83%
-Requests/sec:  1101.27
-Transfer/sec:  12.96MB
+Latency        30.37ms  9.46ms  65.63ms  80.31%
+Requests/sec:  1578.12
 
-test gzip_comp_level 6 
-gzip_comp_level 6;
+test-gzip_comp_level-6 
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.50 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
-Thread-Stats   Avg     Stdev   Max      Stdev
-Latency        2.82ms  0.89ms  13.62ms  72.98%
-Requests/sec:  707.91
-Transfer/sec:  8.32MB
+Thread-Stats   Avg      Stdev    Max      Stdev
+Latency        38.54ms  13.84ms  77.37ms  62.01%
+Requests/sec:  1250.61
 
-test gzip_comp_level 7 
-gzip_comp_level 7;
+test-gzip_comp_level-7 
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.37 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
-Thread-Stats   Avg     Stdev   Max      Stdev
-Latency        3.05ms  1.16ms  11.01ms  83.75%
-Requests/sec:  656.03
-Transfer/sec:  7.63MB
+Thread-Stats   Avg      Stdev    Max       Stdev
+Latency        54.28ms  18.10ms  104.33ms  67.83%
+Requests/sec:  881.09
 
-test gzip_comp_level 8 
-gzip_comp_level 8;
+test-gzip_comp_level-8 
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.36 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        16.87ms  3.03ms  32.22ms  86.02%
-Requests/sec:  117.61
-Transfer/sec:  1.37MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        195.21ms  59.77ms  295.89ms  68.44%
+Requests/sec:  237.80
 
-test gzip_comp_level 9 
-gzip_comp_level 9;
+test-gzip_comp_level-9 
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.36 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
-Thread-Stats   Avg     Stdev   Max      Stdev
-Latency        8.66ms  2.17ms  32.32ms  93.57%
-Requests/sec:  231.85
-Transfer/sec:  2.69MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        184.59ms  42.25ms  259.06ms  85.74%
+Requests/sec:  253.36
 reset defaults:
 gzip_comp_level 5;
 
-test gzip_comp_level 1 
-gzip_comp_level 1;
+test-gzip_comp_level-1 
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 33.29 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        2.19ms   1.16ms  20.29ms  96.49%
-Requests/sec:  944.71
-Transfer/sec:  31.23MB
+Thread-Stats   Avg      Stdev    Max      Stdev
+Latency        41.83ms  15.55ms  80.98ms  64.57%
+Requests/sec:  1145.58
 
-test gzip_comp_level 2 
-gzip_comp_level 2;
+test-gzip_comp_level-2 
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 32.36 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        3.08ms   2.04ms  27.67ms  95.80%
-Requests/sec:  687.53
-Transfer/sec:  22.10MB
+Thread-Stats   Avg      Stdev    Max      Stdev
+Latency        43.59ms  14.00ms  86.12ms  70.57%
+Requests/sec:  1110.72
 
-test gzip_comp_level 3 
-gzip_comp_level 3;
+test-gzip_comp_level-3 
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 31.93 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev     Max     Stdev
-Latency        4.18ms   742.38us  9.57ms  88.69%
-Requests/sec:  476.36
-Transfer/sec:  15.12MB
+Thread-Stats   Avg      Stdev    Max      Stdev
+Latency        51.54ms  17.31ms  99.54ms  70.86%
+Requests/sec:  929.43
 
-test gzip_comp_level 4 
-gzip_comp_level 4;
+test-gzip_comp_level-4 
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 30.60 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        3.06ms   1.22ms  17.33ms  91.62%
-Requests/sec:  664.78
-Transfer/sec:  20.23MB
+Thread-Stats   Avg      Stdev    Max       Stdev
+Latency        57.45ms  16.55ms  105.85ms  67.48%
+Requests/sec:  831.54
 
-test gzip_comp_level 5 
-gzip_comp_level 5;
+test-gzip_comp_level-5 
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.75 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg     Stdev   Max      Stdev
-Latency        6.75ms  1.55ms  27.19ms  97.01%
-Requests/sec:  297.78
-Transfer/sec:  8.82MB
+Thread-Stats   Avg      Stdev    Max       Stdev
+Latency        80.55ms  21.60ms  138.19ms  70.26%
+Requests/sec:  596.04
 
-test gzip_comp_level 6 
-gzip_comp_level 6;
+test-gzip_comp_level-6 
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.64 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg     Stdev     Max      Stdev
-Latency        7.51ms  623.24us  11.88ms  90.77%
-Requests/sec:  265.25
-Transfer/sec:  7.82MB
+Thread-Stats   Avg      Stdev    Max       Stdev
+Latency        84.49ms  18.97ms  139.92ms  76.64%
+Requests/sec:  561.28
 
-test gzip_comp_level 7 
-gzip_comp_level 7;
+test-gzip_comp_level-7 
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.59 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg     Stdev   Max      Stdev
-Latency        7.65ms  1.43ms  15.46ms  85.63%
-Requests/sec:  260.00
-Transfer/sec:  7.66MB
+Thread-Stats   Avg      Stdev    Max       Stdev
+Latency        98.93ms  22.00ms  160.69ms  77.81%
+Requests/sec:  482.80
 
-test gzip_comp_level 8 
-gzip_comp_level 8;
+test-gzip_comp_level-8 
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        4.46ms   0.87ms  13.84ms  94.84%
-Requests/sec:  448.13
-Transfer/sec:  13.19MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        104.48ms  22.89ms  183.45ms  79.98%
+Requests/sec:  458.04
 
-test gzip_comp_level 9 
-gzip_comp_level 9;
+test-gzip_comp_level-9 
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg     Stdev   Max      Stdev
-Latency        8.90ms  1.12ms  17.60ms  80.89%
-Requests/sec:  223.71
-Transfer/sec:  6.58MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        100.73ms  20.90ms  154.66ms  73.88%
+Requests/sec:  475.53
 reset defaults:
 gzip_comp_level 5;
 
-test gzip_comp_level 1 
-gzip_comp_level 1;
+test-gzip_comp_level-1 
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 29.85 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        2.83ms   1.09ms  11.58ms  85.17%
-Requests/sec:  712.41
-Transfer/sec:  21.14MB
+Thread-Stats   Avg      Stdev    Max      Stdev
+Latency        36.02ms  14.32ms  86.75ms  73.59%
+Requests/sec:  1322.13
 
-test gzip_comp_level 2 
-gzip_comp_level 2;
+test-gzip_comp_level-2 
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 27.64 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev     Max      Stdev
-Latency        3.19ms   664.35us  13.25ms  94.53%
-Requests/sec:  626.77
-Transfer/sec:  17.25MB
+Thread-Stats   Avg      Stdev    Max      Stdev
+Latency        38.07ms  13.08ms  81.25ms  73.83%
+Requests/sec:  1247.55
 
-test gzip_comp_level 3 
-gzip_comp_level 3;
+test-gzip_comp_level-3 
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 26.04 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev     Max     Stdev
-Latency        3.13ms   455.11us  8.87ms  86.95%
-Requests/sec:  636.91
-Transfer/sec:  16.53MB
+Thread-Stats   Avg      Stdev    Max      Stdev
+Latency        38.77ms  13.23ms  77.42ms  66.49%
+Requests/sec:  1239.55
 
-test gzip_comp_level 4 
-gzip_comp_level 4;
+test-gzip_comp_level-4 
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 24.55 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        3.02ms   1.24ms  15.95ms  79.19%
-Requests/sec:  664.83
-Transfer/sec:  16.29MB
+Thread-Stats   Avg      Stdev    Max      Stdev
+Latency        53.56ms  14.26ms  99.02ms  69.69%
+Requests/sec:  905.36
 
-test gzip_comp_level 5 
-gzip_comp_level 5;
+test-gzip_comp_level-5 
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 23.07 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev     Max     Stdev
-Latency        3.15ms   739.47us  7.17ms  79.20%
-Requests/sec:  631.95
-Transfer/sec:  14.56MB
+Thread-Stats   Avg      Stdev    Max       Stdev
+Latency        59.58ms  19.71ms  114.30ms  67.73%
+Requests/sec:  798.39
 
-test gzip_comp_level 6 
-gzip_comp_level 6;
+test-gzip_comp_level-6 
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 22.74 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        3.97ms   1.01ms  13.21ms  90.85%
-Requests/sec:  503.11
-Transfer/sec:  11.43MB
+Thread-Stats   Avg      Stdev    Max       Stdev
+Latency        82.51ms  17.11ms  135.78ms  73.94%
+Requests/sec:  584.69
 
-test gzip_comp_level 7 
-gzip_comp_level 7;
+test-gzip_comp_level-7 
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 22.65 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg     Stdev     Max     Stdev
-Latency        4.57ms  628.59us  8.05ms  66.63%
-Requests/sec:  436.04
-Transfer/sec:  9.87MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        110.23ms  35.18ms  198.85ms  64.46%
+Requests/sec:  433.00
 
-test gzip_comp_level 8 
-gzip_comp_level 8;
+test-gzip_comp_level-8 
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 22.65 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg     Stdev     Max     Stdev
-Latency        5.35ms  613.95us  7.33ms  64.46%
-Requests/sec:  371.96
-Transfer/sec:  8.42MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        130.80ms  30.43ms  202.70ms  67.44%
+Requests/sec:  359.74
 
-test gzip_comp_level 9 
-gzip_comp_level 9;
+test-gzip_comp_level-9 
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 22.65 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg     Stdev   Max      Stdev
-Latency        6.62ms  2.18ms  13.23ms  76.89%
-Requests/sec:  300.49
-Transfer/sec:  6.80MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        124.22ms  27.40ms  194.15ms  77.03%
+Requests/sec:  383.48
 reset defaults:
 gzip_comp_level 5;
 
-test brotli_comp_level 1 
-brotli_comp_level 1;
+test-brotli_comp_level-1 
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 12.90 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg     Stdev   Max      Stdev
-Latency        2.74ms  1.19ms  16.83ms  92.66%
-Requests/sec:  744.31
-Transfer/sec:  9.76MB
+Thread-Stats   Avg      Stdev    Max      Stdev
+Latency        38.25ms  14.64ms  80.93ms  74.44%
+Requests/sec:  1255.01
 
-test brotli_comp_level 2 
-brotli_comp_level 2;
+test-brotli_comp_level-2 
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.70 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg     Stdev     Max      Stdev
-Latency        6.02ms  811.95us  12.62ms  81.65%
-Requests/sec:  330.92
-Transfer/sec:  3.95MB
+Thread-Stats   Avg      Stdev    Max       Stdev
+Latency        78.77ms  25.43ms  146.67ms  64.80%
+Requests/sec:  611.98
 
-test brotli_comp_level 3 
-brotli_comp_level 3;
+test-brotli_comp_level-3 
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.69 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg     Stdev   Max      Stdev
-Latency        6.93ms  1.66ms  18.16ms  90.74%
-Requests/sec:  287.91
-Transfer/sec:  3.44MB
+Thread-Stats   Avg      Stdev    Max       Stdev
+Latency        88.19ms  23.39ms  141.54ms  69.87%
+Requests/sec:  539.78
 
-test brotli_comp_level 4 
-brotli_comp_level 4;
+test-brotli_comp_level-4 
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        10.14ms  1.33ms  17.38ms  73.35%
-Requests/sec:  196.83
-Transfer/sec:  2.33MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        129.45ms  38.09ms  228.88ms  67.02%
+Requests/sec:  365.94
 
-test brotli_comp_level 5 
-brotli_comp_level 5;
+test-brotli_comp_level-5 
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.09 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        14.89ms  3.53ms  27.57ms  83.90%
-Requests/sec:  133.25
-Transfer/sec:  1.51MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        178.71ms  40.33ms  282.09ms  81.80%
+Requests/sec:  257.99
 
-test brotli_comp_level 6 
-brotli_comp_level 6;
+test-brotli_comp_level-6 
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.07 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        16.81ms  2.62ms  29.19ms  74.68%
-Requests/sec:  118.40
-Transfer/sec:  1.34MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        187.42ms  44.02ms  259.01ms  86.69%
+Requests/sec:  244.13
 
-test brotli_comp_level 7 
-brotli_comp_level 7;
+test-brotli_comp_level-7 
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.06 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        22.46ms  2.65ms  33.17ms  76.84%
-Requests/sec:  88.42
-Transfer/sec:  1.00MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        235.86ms  64.53ms  345.02ms  77.94%
+Requests/sec:  191.48
 
-test brotli_comp_level 8 
-brotli_comp_level 8;
+test-brotli_comp_level-8 
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.05 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        13.27ms  1.82ms  23.27ms  64.31%
-Requests/sec:  150.16
-Transfer/sec:  1.70MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        299.25ms  73.50ms  394.98ms  84.91%
+Requests/sec:  152.19
 
-test brotli_comp_level 9 
-brotli_comp_level 9;
+test-brotli_comp_level-9 
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.04 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        34.94ms   6.61ms  70.32ms  88.60%
-Requests/sec:  56.85
-Transfer/sec:  657.79KB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        335.62ms  91.92ms  417.97ms  86.69%
+Requests/sec:  128.86
 reset defaults:
 brotli_comp_level 5;
 
-test brotli_comp_level 1 
-brotli_comp_level 1;
+test-brotli_comp_level-1 
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 34.12 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        4.57ms   1.08ms  14.59ms  85.65%
-Requests/sec:  437.62
-Transfer/sec:  14.82MB
+Thread-Stats   Avg      Stdev    Max       Stdev
+Latency        90.10ms  19.56ms  155.88ms  74.93%
+Requests/sec:  524.82
 
-test brotli_comp_level 2 
-brotli_comp_level 2;
+test-brotli_comp_level-2 
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 31.56 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        12.78ms  1.58ms  21.96ms  79.81%
-Requests/sec:  155.78
-Transfer/sec:  4.90MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        163.05ms  50.92ms  251.78ms  67.26%
+Requests/sec:  287.10
 
-test brotli_comp_level 3 
-brotli_comp_level 3;
+test-brotli_comp_level-3 
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 31.27 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        13.53ms  1.62ms  17.83ms  76.61%
-Requests/sec:  147.20
-Transfer/sec:  4.58MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        156.57ms  34.64ms  245.65ms  80.22%
+Requests/sec:  298.93
 
-test brotli_comp_level 4 
-brotli_comp_level 4;
+test-brotli_comp_level-4 
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 30.54 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        10.62ms  1.55ms  19.42ms  72.05%
-Requests/sec:  187.85
-Transfer/sec:  5.71MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        224.73ms  48.33ms  311.95ms  86.96%
+Requests/sec:  205.56
 
-test brotli_comp_level 5 
-brotli_comp_level 5;
+test-brotli_comp_level-5 
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.01 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        17.01ms  1.95ms  22.87ms  70.37%
-Requests/sec:  116.93
-Transfer/sec:  3.38MB
+Thread-Stats   Avg       Stdev     Max       Stdev
+Latency        387.56ms  129.47ms  577.07ms  70.29%
+Requests/sec:  114.26
 
-test brotli_comp_level 6 
-brotli_comp_level 6;
+test-brotli_comp_level-6 
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.83 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        19.54ms  2.25ms  27.53ms  66.67%
-Requests/sec:  101.90
-Transfer/sec:  2.92MB
+Thread-Stats   Avg       Stdev     Max       Stdev
+Latency        435.20ms  139.82ms  631.26ms  77.67%
+Requests/sec:  98.77
 
-test brotli_comp_level 7 
-brotli_comp_level 7;
+test-brotli_comp_level-7 
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.75 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        29.57ms  2.91ms  38.14ms  71.85%
-Requests/sec:  67.17
-Transfer/sec:  1.92MB
+Thread-Stats   Avg       Stdev     Max       Stdev
+Latency        583.64ms  230.17ms  947.16ms  72.22%
+Requests/sec:  66.74
 
-test brotli_comp_level 8 
-brotli_comp_level 8;
+test-brotli_comp_level-8 
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.73 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        40.55ms  4.31ms  51.59ms  56.44%
-Requests/sec:  49.12
-Transfer/sec:  1.40MB
+Thread-Stats   Avg       Stdev     Max    Stdev
+Latency        724.43ms  301.50ms  1.10s  63.16%
+Requests/sec:  52.26
 
-test brotli_comp_level 9 
-brotli_comp_level 9;
+test-brotli_comp_level-9 
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.70 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg       Stdev    Max       Stdev
-Latency        76.77ms   18.31ms  129.73ms  63.46%
-Requests/sec:  25.42
-Transfer/sec:  743.63KB
+Thread-Stats   Avg       Stdev     Max    Stdev
+Latency        923.30ms  478.04ms  1.46s  48.57%
+Requests/sec:  33.86
 reset defaults:
 brotli_comp_level 5;
 
-test brotli_comp_level 1 
-brotli_comp_level 1;
+test-brotli_comp_level-1 
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 28.53 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg     Stdev   Max      Stdev
-Latency        7.99ms  1.58ms  18.60ms  90.64%
-Requests/sec:  249.20
-Transfer/sec:  7.07MB
+Thread-Stats   Avg      Stdev    Max       Stdev
+Latency        94.64ms  21.24ms  154.30ms  74.42%
+Requests/sec:  507.74
 
-test brotli_comp_level 2 
-brotli_comp_level 2;
+test-brotli_comp_level-2 
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 26.20 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        16.47ms  2.82ms  27.76ms  80.33%
-Requests/sec:  120.88
-Transfer/sec:  3.16MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        166.15ms  37.92ms  244.89ms  81.49%
+Requests/sec:  279.49
 
-test brotli_comp_level 3 
-brotli_comp_level 3;
+test-brotli_comp_level-3 
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 25.04 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        15.92ms  2.54ms  24.39ms  74.30%
-Requests/sec:  124.14
-Transfer/sec:  3.11MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        207.59ms  52.57ms  325.69ms  78.98%
+Requests/sec:  219.78
 
-test brotli_comp_level 4 
-brotli_comp_level 4;
+test-brotli_comp_level-4 
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 23.85 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        11.11ms  1.51ms  21.94ms  75.40%
-Requests/sec:  179.38
-Transfer/sec:  4.27MB
+Thread-Stats   Avg       Stdev    Max       Stdev
+Latency        235.18ms  61.94ms  333.70ms  79.01%
+Requests/sec:  191.84
 
-test brotli_comp_level 5 
-brotli_comp_level 5;
+test-brotli_comp_level-5 
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 20.28 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        32.85ms  4.64ms  53.99ms  80.99%
-Requests/sec:  60.22
-Transfer/sec:  1.22MB
+Thread-Stats   Avg       Stdev     Max       Stdev
+Latency        354.46ms  115.63ms  502.87ms  75.19%
+Requests/sec:  122.44
 
-test brotli_comp_level 6 
-brotli_comp_level 6;
+test-brotli_comp_level-6 
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 19.88 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        40.09ms  4.14ms  58.68ms  83.84%
-Requests/sec:  49.22
-Transfer/sec:  0.98MB
+Thread-Stats   Avg       Stdev     Max       Stdev
+Latency        417.07ms  117.88ms  588.25ms  80.54%
+Requests/sec:  105.06
 
-test brotli_comp_level 7 
-brotli_comp_level 7;
+test-brotli_comp_level-7 
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 19.70 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        61.82ms   8.77ms  73.67ms  64.06%
-Requests/sec:  31.91
-Transfer/sec:  645.52KB
+Thread-Stats   Avg       Stdev     Max    Stdev
+Latency        713.81ms  343.91ms  1.19s  55.77%
+Requests/sec:  50.75
 
-test brotli_comp_level 8 
-brotli_comp_level 8;
+test-brotli_comp_level-8 
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 19.56 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg      Stdev   Max      Stdev
-Latency        42.63ms  4.41ms  55.04ms  71.43%
-Requests/sec:  46.62
-Transfer/sec:  0.91MB
+Thread-Stats   Avg       Stdev     Max    Stdev
+Latency        795.26ms  335.52ms  1.14s  74.74%
+Requests/sec:  46.09
 
-test brotli_comp_level 9 
-brotli_comp_level 9;
+test-brotli_comp_level-9 
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 19.43 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        58.35ms   6.61ms  69.74ms  58.82%
-Requests/sec:  33.72
-Transfer/sec:  673.21KB
+Thread-Stats   Avg       Stdev     Max    Stdev
+Latency        974.35ms  521.59ms  1.68s  49.23%
+Requests/sec:  30.84
 reset defaults:
 brotli_comp_level 5;
 
-test gzip_comp_level 1 precompress
-gzip_comp_level 1;
+test-gzip_comp_level-1 precompress
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 10.39 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        294.99us  1.17ms  16.59ms  97.14%
-Requests/sec:  14165.85
-Transfer/sec:  150.85MB
+Latency        2.36ms    1.94ms  21.74ms  93.47%
+Requests/sec:  12996.05
 
-test gzip_comp_level 2 precompress
-gzip_comp_level 2;
+test-gzip_comp_level-2 precompress
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 10.39 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        324.96us  1.23ms  15.95ms  96.55%
-Requests/sec:  14026.30
-Transfer/sec:  149.36MB
+Latency        2.44ms    2.27ms  18.99ms  91.03%
+Requests/sec:  13888.69
 
-test gzip_comp_level 3 precompress
-gzip_comp_level 3;
+test-gzip_comp_level-3 precompress
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 10.39 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        541.93us  2.35ms  34.33ms  95.94%
-Requests/sec:  13236.94
-Transfer/sec:  140.96MB
+Latency        2.42ms    2.40ms  33.53ms  95.45%
+Requests/sec:  12834.67
 
-test gzip_comp_level 4 precompress
-gzip_comp_level 4;
+test-gzip_comp_level-4 precompress
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 10.39 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        321.31us  1.19ms  15.63ms  96.38%
-Requests/sec:  14130.67
-Transfer/sec:  150.47MB
+Latency        2.22ms    2.21ms  29.94ms  95.29%
+Requests/sec:  13991.59
 
-test gzip_comp_level 5 precompress
-gzip_comp_level 5;
+test-gzip_comp_level-5 precompress
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 10.39 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        226.36us  0.94ms  15.68ms  98.19%
-Requests/sec:  14598.03
-Transfer/sec:  155.45MB
+Latency        2.17ms    1.57ms  20.62ms  92.23%
+Requests/sec:  13418.70
 
-test gzip_comp_level 6 precompress
-gzip_comp_level 6;
+test-gzip_comp_level-6 precompress
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 10.39 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        309.43us  1.10ms  14.53ms  96.52%
-Requests/sec:  13714.98
-Transfer/sec:  146.05MB
+Latency        2.14ms    1.71ms  21.75ms  94.39%
+Requests/sec:  13737.41
 
-test gzip_comp_level 7 precompress
-gzip_comp_level 7;
+test-gzip_comp_level-7 precompress
 URI: http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 10.39 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        240.44us  773.10us  11.08ms  96.99%
-Requests/sec:  14191.09
-Transfer/sec:  151.12MB
-
-test gzip_comp_level 8 precompress
-gzip_comp_level 8;
-URI: http://localhost/fontawesome.css (gzip)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 10.39 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        229.70us  724.16us  11.88ms  97.73%
-Requests/sec:  11419.86
-Transfer/sec:  121.61MB
-
-test gzip_comp_level 9 precompress
-gzip_comp_level 9;
-URI: http://localhost/fontawesome.css (gzip)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 10.39 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/fontawesome.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        247.36us  0.88ms  14.56ms  97.33%
-Requests/sec:  13851.93
-Transfer/sec:  147.51MB
+Latency        2.11ms    1.90ms  20.88ms  95.03%
+Requests/sec:  14581.21
+
+test-gzip_comp_level-8 precompress
+URI: http://localhost/fontawesome.css (gzip)
+Uncompressed-size: 53.17 KiB
+Compressed-size: 10.39 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.08ms    1.42ms  17.32ms  90.91%
+Requests/sec:  13769.93
+
+test-gzip_comp_level-9 precompress
+URI: http://localhost/fontawesome.css (gzip)
+Uncompressed-size: 53.17 KiB
+Compressed-size: 10.39 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.11ms    1.44ms  17.26ms  89.63%
+Requests/sec:  13733.66
 reset defaults:
 gzip_comp_level 5;
 
-test gzip_comp_level 1 precompress
-gzip_comp_level 1;
+test-gzip_comp_level-1 precompress
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        390.59us  1.28ms  14.18ms  95.36%
-Requests/sec:  12441.51
-Transfer/sec:  353.76MB
+Latency        2.43ms    1.81ms  24.78ms  95.69%
+Requests/sec:  11848.42
 
-test gzip_comp_level 2 precompress
-gzip_comp_level 2;
+test-gzip_comp_level-2 precompress
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        389.56us  1.32ms  15.67ms  95.52%
-Requests/sec:  12181.78
-Transfer/sec:  346.37MB
+Latency        2.80ms    3.49ms  41.47ms  94.64%
+Requests/sec:  12012.57
 
-test gzip_comp_level 3 precompress
-gzip_comp_level 3;
+test-gzip_comp_level-3 precompress
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        272.90us  0.96ms  15.58ms  97.20%
-Requests/sec:  12445.45
-Transfer/sec:  353.87MB
+Latency        2.29ms    1.25ms  17.46ms  85.63%
+Requests/sec:  12146.03
 
-test gzip_comp_level 4 precompress
-gzip_comp_level 4;
+test-gzip_comp_level-4 precompress
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        340.55us  1.26ms  15.29ms  96.60%
-Requests/sec:  12908.22
-Transfer/sec:  367.03MB
+Latency        2.55ms    3.19ms  34.35ms  93.28%
+Requests/sec:  14606.74
 
-test gzip_comp_level 5 precompress
-gzip_comp_level 5;
+test-gzip_comp_level-5 precompress
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        275.66us  0.99ms  15.56ms  97.39%
-Requests/sec:  12250.62
-Transfer/sec:  348.33MB
+Latency        2.47ms    1.81ms  26.50ms  93.26%
+Requests/sec:  11833.53
 
-test gzip_comp_level 6 precompress
-gzip_comp_level 6;
+test-gzip_comp_level-6 precompress
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        213.04us  646.44us  12.88ms  97.65%
-Requests/sec:  13287.36
-Transfer/sec:  377.81MB
-
-test gzip_comp_level 7 precompress
-gzip_comp_level 7;
-URI: http://localhost/jquery-3.3.1.min.js (gzip)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 28.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        235.49us  716.67us  12.72ms  97.50%
-Requests/sec:  12100.74
-Transfer/sec:  344.07MB
-
-test gzip_comp_level 8 precompress
-gzip_comp_level 8;
-URI: http://localhost/jquery-3.3.1.min.js (gzip)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 28.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        288.93us  0.98ms  14.49ms  96.84%
-Requests/sec:  12289.45
-Transfer/sec:  349.44MB
+Latency        2.71ms    2.90ms  23.95ms  92.57%
+Requests/sec:  13108.99
 
-test gzip_comp_level 9 precompress
-gzip_comp_level 9;
+test-gzip_comp_level-7 precompress
 URI: http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.57 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        225.52us  672.88us  12.00ms  97.66%
-Requests/sec:  11921.13
-Transfer/sec:  338.96MB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.33ms    2.43ms  30.45ms  96.05%
+Requests/sec:  13453.02
+
+test-gzip_comp_level-8 precompress
+URI: http://localhost/jquery-3.3.1.min.js (gzip)
+Uncompressed-size: 84.88 KiB
+Compressed-size: 28.57 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.23ms    1.11ms  15.32ms  82.60%
+Requests/sec:  12176.63
+
+test-gzip_comp_level-9 precompress
+URI: http://localhost/jquery-3.3.1.min.js (gzip)
+Uncompressed-size: 84.88 KiB
+Compressed-size: 28.57 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.48ms    2.15ms  27.39ms  95.23%
+Requests/sec:  12196.66
 reset defaults:
 gzip_comp_level 5;
 
-test gzip_comp_level 1 precompress
-gzip_comp_level 1;
+test-gzip_comp_level-1 precompress
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 20.61 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        186.76us  582.17us  11.86ms  98.33%
-Requests/sec:  13842.01
-Transfer/sec:  285.56MB
-
-test gzip_comp_level 2 precompress
-gzip_comp_level 2;
-URI: http://localhost/bootstrap.min.css (gzip)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 20.61 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        266.76us  0.93ms  15.35ms  97.11%
-Requests/sec:  13213.33
-Transfer/sec:  272.59MB
+Latency        2.13ms    1.94ms  28.25ms  96.45%
+Requests/sec:  14084.18
 
-test gzip_comp_level 3 precompress
-gzip_comp_level 3;
+test-gzip_comp_level-2 precompress
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 20.61 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        222.51us  731.91us  12.25ms  97.73%
-Requests/sec:  13502.35
-Transfer/sec:  278.55MB
-
-test gzip_comp_level 4 precompress
-gzip_comp_level 4;
-URI: http://localhost/bootstrap.min.css (gzip)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 20.61 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        274.10us  0.89ms  12.97ms  96.57%
-Requests/sec:  12927.33
-Transfer/sec:  266.69MB
+Latency        2.31ms    2.30ms  26.64ms  95.09%
+Requests/sec:  13914.42
 
-test gzip_comp_level 5 precompress
-gzip_comp_level 5;
+test-gzip_comp_level-3 precompress
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 20.61 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        258.51us  0.85ms  12.26ms  97.02%
-Requests/sec:  13269.20
-Transfer/sec:  273.74MB
+Latency        2.30ms    1.30ms  14.47ms  83.00%
+Requests/sec:  12407.89
 
-test gzip_comp_level 6 precompress
-gzip_comp_level 6;
+test-gzip_comp_level-4 precompress
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 20.61 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        213.93us  717.88us  11.88ms  97.51%
-Requests/sec:  14695.08
-Transfer/sec:  303.16MB
-
-test gzip_comp_level 7 precompress
-gzip_comp_level 7;
-URI: http://localhost/bootstrap.min.css (gzip)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 20.61 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        551.66us  1.92ms  28.50ms  94.90%
-Requests/sec:  11006.61
-Transfer/sec:  227.07MB
+Latency        2.28ms    1.59ms  20.91ms  93.24%
+Requests/sec:  12734.98
 
-test gzip_comp_level 8 precompress
-gzip_comp_level 8;
+test-gzip_comp_level-5 precompress
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 20.61 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        595.67us  1.73ms  16.82ms  93.03%
-Requests/sec:  12137.45
-Transfer/sec:  250.39MB
+Latency        2.46ms    2.34ms  29.41ms  95.31%
+Requests/sec:  12699.91
 
-test gzip_comp_level 9 precompress
-gzip_comp_level 9;
+test-gzip_comp_level-6 precompress
 URI: http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 20.61 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: gzip' --breakout http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        582.28us  1.67ms  14.70ms  93.11%
-Requests/sec:  11538.75
-Transfer/sec:  238.04MB
+Latency        2.36ms    1.60ms  18.04ms  91.00%
+Requests/sec:  12146.74
+
+test-gzip_comp_level-7 precompress
+URI: http://localhost/bootstrap.min.css (gzip)
+Uncompressed-size: 152.10 KiB
+Compressed-size: 20.61 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.47ms    2.76ms  26.84ms  93.67%
+Requests/sec:  14180.46
+
+test-gzip_comp_level-8 precompress
+URI: http://localhost/bootstrap.min.css (gzip)
+Uncompressed-size: 152.10 KiB
+Compressed-size: 20.61 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.43ms    2.09ms  22.47ms  94.10%
+Requests/sec:  13042.04
+
+test-gzip_comp_level-9 precompress
+URI: http://localhost/bootstrap.min.css (gzip)
+Uncompressed-size: 152.10 KiB
+Compressed-size: 20.61 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.54ms    3.17ms  39.40ms  95.66%
+Requests/sec:  13137.13
 reset defaults:
 gzip_comp_level 5;
 
-test brotli_comp_level 1 precompress
-brotli_comp_level 1;
+test-brotli_comp_level-1 precompress
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 9.38 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        436.03us  1.38ms  15.27ms  94.36%
-Requests/sec:  13521.07
-Transfer/sec:  130.60MB
+Latency        2.06ms    2.38ms  28.99ms  94.53%
+Requests/sec:  16701.11
 
-test brotli_comp_level 2 precompress
-brotli_comp_level 2;
+test-brotli_comp_level-2 precompress
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 9.38 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        422.58us  1.50ms  15.91ms  95.28%
-Requests/sec:  14221.37
-Transfer/sec:  137.36MB
+Latency        2.00ms    1.33ms  17.99ms  89.45%
+Requests/sec:  14489.01
 
-test brotli_comp_level 3 precompress
-brotli_comp_level 3;
+test-brotli_comp_level-3 precompress
 URI: http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 9.38 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        1.96ms    1.51ms  21.98ms  94.50%
+Requests/sec:  14933.90
+
+test-brotli_comp_level-4 precompress
+URI: http://localhost/fontawesome.css (br)
+Uncompressed-size: 53.17 KiB
+Compressed-size: 9.38 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.02ms    1.81ms  20.17ms  95.15%
+Requests/sec:  15276.76
+
+test-brotli_comp_level-5 precompress
+URI: http://localhost/fontawesome.css (br)
+Uncompressed-size: 53.17 KiB
+Compressed-size: 9.38 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.39ms    2.30ms  22.51ms  91.96%
+Requests/sec:  13801.38
+
+test-brotli_comp_level-6 precompress
+URI: http://localhost/fontawesome.css (br)
+Uncompressed-size: 53.17 KiB
+Compressed-size: 9.38 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.19ms    1.86ms  21.23ms  93.81%
+Requests/sec:  13996.12
+
+test-brotli_comp_level-7 precompress
+URI: http://localhost/fontawesome.css (br)
+Uncompressed-size: 53.17 KiB
+Compressed-size: 9.38 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.30ms    2.04ms  22.72ms  93.63%
+Requests/sec:  13505.81
+
+test-brotli_comp_level-8 precompress
+URI: http://localhost/fontawesome.css (br)
+Uncompressed-size: 53.17 KiB
+Compressed-size: 9.38 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        1.94ms    1.27ms  22.79ms  87.81%
+Requests/sec:  14094.17
+
+test-brotli_comp_level-9 precompress
+URI: http://localhost/fontawesome.css (br)
+Uncompressed-size: 53.17 KiB
+Compressed-size: 9.38 KiB
 Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        185.92us  565.15us  10.94ms  97.92%
-Requests/sec:  14246.85
-Transfer/sec:  137.61MB
-
-test brotli_comp_level 4 precompress
-brotli_comp_level 4;
-URI: http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        473.85us  1.48ms  14.69ms  94.14%
-Requests/sec:  13121.13
-Transfer/sec:  126.73MB
-
-test brotli_comp_level 5 precompress
-brotli_comp_level 5;
-URI: http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        335.12us  1.15ms  15.71ms  95.83%
-Requests/sec:  13695.45
-Transfer/sec:  132.28MB
-
-test brotli_comp_level 6 precompress
-brotli_comp_level 6;
-URI: http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        218.72us  826.64us  14.62ms  97.86%
-Requests/sec:  14340.32
-Transfer/sec:  138.51MB
-
-test brotli_comp_level 7 precompress
-brotli_comp_level 7;
-URI: http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        233.74us  820.56us  11.88ms  97.02%
-Requests/sec:  15289.48
-Transfer/sec:  147.68MB
-
-test brotli_comp_level 8 precompress
-brotli_comp_level 8;
-URI: http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        367.58us  1.26ms  14.62ms  95.28%
-Requests/sec:  13630.00
-Transfer/sec:  131.65MB
-
-test brotli_comp_level 9 precompress
-brotli_comp_level 9;
-URI: http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/fontawesome.css
-Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        246.47us  0.99ms  14.81ms  97.72%
-Requests/sec:  14403.54
-Transfer/sec:  139.12MB
+Latency        1.78ms    807.67us  10.17ms  73.61%
+Requests/sec:  14064.38
 reset defaults:
 brotli_comp_level 5;
 
-test brotli_comp_level 1 precompress
-brotli_comp_level 1;
+test-brotli_comp_level-1 precompress
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 26.85 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg       Stdev     Max     Stdev
-Latency        142.34us  245.05us  6.47ms  99.04%
-Requests/sec:  13715.42
-Transfer/sec:  366.88MB
-
-test brotli_comp_level 2 precompress
-brotli_comp_level 2;
-URI: http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        358.99us  1.23ms  16.32ms  95.63%
-Requests/sec:  13418.00
-Transfer/sec:  358.93MB
+Latency        2.18ms    1.06ms  15.43ms  85.00%
+Requests/sec:  12637.97
 
-test brotli_comp_level 3 precompress
-brotli_comp_level 3;
+test-brotli_comp_level-2 precompress
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 26.85 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        245.75us  824.86us  13.96ms  96.79%
-Requests/sec:  14397.78
-Transfer/sec:  385.13MB
-
-test brotli_comp_level 4 precompress
-brotli_comp_level 4;
-URI: http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        200.75us  605.30us  11.89ms  97.63%
-Requests/sec:  13834.37
-Transfer/sec:  370.06MB
-
-test brotli_comp_level 5 precompress
-brotli_comp_level 5;
-URI: http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        215.74us  695.54us  11.24ms  97.49%
-Requests/sec:  13718.38
-Transfer/sec:  366.96MB
-
-test brotli_comp_level 6 precompress
-brotli_comp_level 6;
-URI: http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        378.65us  1.34ms  17.84ms  95.74%
-Requests/sec:  13095.96
-Transfer/sec:  350.31MB
+Latency        2.34ms    2.00ms  27.18ms  93.74%
+Requests/sec:  13135.34
 
-test brotli_comp_level 7 precompress
-brotli_comp_level 7;
+test-brotli_comp_level-3 precompress
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 26.85 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        363.68us  1.20ms  14.20ms  95.40%
-Requests/sec:  12470.58
-Transfer/sec:  333.58MB
+Latency        2.20ms    1.34ms  17.94ms  88.74%
+Requests/sec:  12804.34
 
-test brotli_comp_level 8 precompress
-brotli_comp_level 8;
+test-brotli_comp_level-4 precompress
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 26.85 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        272.06us  0.95ms  14.16ms  96.97%
-Requests/sec:  13195.39
-Transfer/sec:  352.97MB
+Latency        2.09ms    0.97ms  10.60ms  79.09%
+Requests/sec:  13184.66
 
-test brotli_comp_level 9 precompress
-brotli_comp_level 9;
+test-brotli_comp_level-5 precompress
 URI: http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 26.85 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/jquery-3.3.1.min.js
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        378.02us  1.34ms  14.97ms  95.52%
-Requests/sec:  14607.96
-Transfer/sec:  390.76MB
+Latency        2.24ms    1.52ms  17.83ms  92.97%
+Requests/sec:  12877.74
+
+test-brotli_comp_level-6 precompress
+URI: http://localhost/jquery-3.3.1.min.js (br)
+Uncompressed-size: 84.88 KiB
+Compressed-size: 26.85 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.26ms    1.89ms  25.85ms  94.73%
+Requests/sec:  13377.97
+
+test-brotli_comp_level-7 precompress
+URI: http://localhost/jquery-3.3.1.min.js (br)
+Uncompressed-size: 84.88 KiB
+Compressed-size: 26.85 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.26ms    2.10ms  26.07ms  93.45%
+Requests/sec:  13946.14
+
+test-brotli_comp_level-8 precompress
+URI: http://localhost/jquery-3.3.1.min.js (br)
+Uncompressed-size: 84.88 KiB
+Compressed-size: 26.85 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.60ms    3.95ms  38.86ms  93.36%
+Requests/sec:  15968.95
+
+test-brotli_comp_level-9 precompress
+URI: http://localhost/jquery-3.3.1.min.js (br)
+Uncompressed-size: 84.88 KiB
+Compressed-size: 26.85 KiB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.07ms    1.49ms  15.25ms  91.54%
+Requests/sec:  14073.88
 reset defaults:
 brotli_comp_level 5;
 
-test brotli_comp_level 1 precompress
-brotli_comp_level 1;
+test-brotli_comp_level-1 precompress
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 16.74 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        318.59us  1.08ms  14.95ms  95.94%
-Requests/sec:  12993.65
-Transfer/sec:  218.91MB
+Latency        2.43ms    2.01ms  26.29ms  94.69%
+Requests/sec:  12580.10
 
-test brotli_comp_level 2 precompress
-brotli_comp_level 2;
+test-brotli_comp_level-2 precompress
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 16.74 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        226.44us  0.86ms  15.30ms  97.53%
-Requests/sec:  14911.98
-Transfer/sec:  251.23MB
+Latency        1.96ms    1.11ms  12.31ms  82.31%
+Requests/sec:  14323.17
 
-test brotli_comp_level 3 precompress
-brotli_comp_level 3;
+test-brotli_comp_level-3 precompress
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 16.74 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        370.34us  1.36ms  15.45ms  96.02%
-Requests/sec:  13487.61
-Transfer/sec:  227.23MB
+Latency        1.97ms    1.78ms  22.46ms  95.69%
+Requests/sec:  15841.49
 
-test brotli_comp_level 4 precompress
-brotli_comp_level 4;
+test-brotli_comp_level-4 precompress
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 16.74 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        300.10us  1.06ms  15.71ms  96.24%
-Requests/sec:  13814.48
-Transfer/sec:  232.74MB
+Latency        2.39ms    2.64ms  33.79ms  94.28%
+Requests/sec:  13899.09
 
-test brotli_comp_level 5 precompress
-brotli_comp_level 5;
+test-brotli_comp_level-5 precompress
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 16.74 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        232.58us  0.89ms  16.01ms  97.59%
-Requests/sec:  14132.20
-Transfer/sec:  238.09MB
+Latency        2.33ms    2.57ms  28.78ms  94.43%
+Requests/sec:  14532.37
 
-test brotli_comp_level 6 precompress
-brotli_comp_level 6;
+test-brotli_comp_level-6 precompress
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 16.74 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
 Thread-Stats   Avg       Stdev   Max      Stdev
-Latency        353.23us  1.22ms  15.88ms  95.77%
-Requests/sec:  12902.57
-Transfer/sec:  217.38MB
+Latency        2.15ms    2.11ms  26.72ms  95.49%
+Requests/sec:  14532.08
 
-test brotli_comp_level 7 precompress
-brotli_comp_level 7;
+test-brotli_comp_level-7 precompress
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 16.74 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        230.07us  714.48us  11.09ms  96.88%
-Requests/sec:  14376.76
-Transfer/sec:  242.21MB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        2.18ms    1.46ms  17.59ms  91.32%
+Requests/sec:  13112.80
 
-test brotli_comp_level 8 precompress
-brotli_comp_level 8;
+test-brotli_comp_level-8 precompress
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 16.74 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        170.02us  502.44us  11.97ms  98.34%
-Requests/sec:  14552.76
-Transfer/sec:  245.18MB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        1.99ms    1.81ms  22.39ms  94.95%
+Requests/sec:  15099.36
 
-test brotli_comp_level 9 precompress
-brotli_comp_level 9;
+test-brotli_comp_level-9 precompress
 URI: http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 16.74 KiB
-wrk-cmm -t1 -c2 -d2s --breakout -H 'Accept-Encoding: br' --latency http://localhost/bootstrap.min.css
-Thread-Stats   Avg       Stdev     Max      Stdev
-Latency        204.08us  689.89us  12.77ms  97.64%
-Requests/sec:  14744.25
-Transfer/sec:  248.41MB
+Thread-Stats   Avg       Stdev   Max      Stdev
+Latency        1.86ms    2.30ms  29.17ms  96.33%
+Requests/sec:  17657.77
 reset defaults:
 brotli_comp_level 5;
 ```
