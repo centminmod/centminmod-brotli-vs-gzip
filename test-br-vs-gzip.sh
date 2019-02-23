@@ -3,7 +3,8 @@
 # centmin mod nginx brotli vs gzip testing
 #################################################
 users=10
-duration=5
+duration=6
+sleep=3
 
 setup() {
   wget https://code.jquery.com/jquery-3.3.1.min.js -O /usr/local/nginx/html/jquery-3.3.1.min.js >/dev/null 2>&1
@@ -23,23 +24,26 @@ gziptests() {
   urls='http://localhost/fontawesome.css http://localhost/jquery-3.3.1.min.js http://localhost/bootstrap.min.css'
   for url in $urls; do
     for l in {1..9}; do
-    sleep 5;
+    sleep $sleep;
     echo -e "\ntest gzip_comp_level $l $precomp";
     sed -ie "s|BROTLI=.*|BROTLI='n'|" /usr/local/bin/curltest
-    if [[ "$precomp" = 'precompress' && ! -f ${url}.gz ]]; then
-      pigz -11k $url >/dev/null 2>&1
+    filename=$(basename $url)
+    filepath="/usr/local/nginx/html/$filename"
+    if [[ "$precomp" = 'precompress' && ! -f ${filepath}.gz ]]; then
+      pigz -11k $filepath >/dev/null 2>&1
     fi
     sed -i "s|gzip_comp_level .*|gzip_comp_level $l;|" /usr/local/nginx/conf/nginx.conf
     grep gzip_comp_level /usr/local/nginx/conf/nginx.conf
     ngxrestart >/dev/null 2>&1;
     /usr/local/bin/curltest gzip $url;
-    echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;"
+    echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url"
     wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;
     done;
     sed -i "s|gzip_comp_level .*|gzip_comp_level 5;|" /usr/local/nginx/conf/nginx.conf
+    echo -e "reset defaults:"
     grep gzip_comp_level /usr/local/nginx/conf/nginx.conf
-    if [[ -f ${url}.gz ]]; then
-      rm -rf ${url}.gz
+    if [[ -f ${filepath}.gz ]]; then
+      rm -rf ${filepath}.gz
     fi
   done
 }
@@ -49,23 +53,26 @@ brotlitests() {
   urls='http://localhost/fontawesome.css http://localhost/jquery-3.3.1.min.js http://localhost/bootstrap.min.css'
   for url in $urls; do
     for l in {1..9}; do
-    sleep 5;
+    sleep $sleep;
     echo -e "\ntest brotli_comp_level $l $precomp";
     sed -ie "s|BROTLI=.*|BROTLI='y'|" /usr/local/bin/curltest
-    if [[ "$precomp" = 'precompress' && ! -f ${url}.br ]]; then
-      brotli -q 11 --force ${url} --output=${url}.br >/dev/null 2>&1
+    filename=$(basename $url)
+    filepath="/usr/local/nginx/html/$filename"
+    if [[ "$precomp" = 'precompress' && ! -f ${filepath}.br ]]; then
+      brotli -q 11 --force ${filepath} --output=${filepath}.br >/dev/null 2>&1
     fi
     sed -i "s|brotli_comp_level .*|brotli_comp_level $l;|" /usr/local/nginx/conf/brotli_inc.conf
     grep brotli_comp_level /usr/local/nginx/conf/brotli_inc.conf
     ngxrestart >/dev/null 2>&1;
     /usr/local/bin/curltest br $url;
-    echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;"
+    echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url"
     wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;
     done;
     sed -i "s|brotli_comp_level .*|brotli_comp_level 5;|" /usr/local/nginx/conf/brotli_inc.conf
+    echo -e "reset defaults:"
     grep brotli_comp_level /usr/local/nginx/conf/brotli_inc.conf
-    if [[ -f ${url}.br ]]; then
-      rm -rf ${url}.br
+    if [[ -f ${filepath}.br ]]; then
+      rm -rf ${filepath}.br
     fi
   done
 }
