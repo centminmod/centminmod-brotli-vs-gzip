@@ -38,14 +38,14 @@ gziptests() {
       grep gzip_comp_level /usr/local/nginx/conf/nginx.conf
     fi
     ngxrestart >/dev/null 2>&1;
-    /usr/local/bin/curltest gzip $url | sed -e 's|pressed size :|pressed-size:|g' -e 's|pressed size   :|pressed-size:|g';
+    /usr/local/bin/curltest gzip $url | sed -e 's|pressed size :|pressed-size:|g' -e 's|pressed size   :|pressed-size:|g' -e 's|URI: ||';
     if [[ "$debug" = [yY] ]]; then
       echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url"
     fi
     if [[ "$debug" = [yY] ]]; then
       wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;
     else
-      wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | grep -v 'Transfer' | column -t;
+      wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | egrep -v 'Thread-Stats|Latency|Transfer' | column -t;
     fi
     done;
     sed -i "s|gzip_comp_level .*|gzip_comp_level 5;|" /usr/local/nginx/conf/nginx.conf
@@ -75,14 +75,14 @@ brotlitests() {
       grep brotli_comp_level /usr/local/nginx/conf/brotli_inc.conf
     fi
     ngxrestart >/dev/null 2>&1;
-    /usr/local/bin/curltest br $url | sed -e 's|pressed size :|pressed-size:|g' -e 's|pressed size   :|pressed-size:|g';
+    /usr/local/bin/curltest br $url | sed -e 's|pressed size :|pressed-size:|g' -e 's|pressed size   :|pressed-size:|g' -e 's|URI: ||';
     if [[ "$debug" = [yY] ]]; then
       echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url"
     fi
     if [[ "$debug" = [yY] ]]; then
       wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;
     else
-      wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | grep -v 'Transfer' | column -t;
+      wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | egrep -v 'Thread-Stats|Latency|Transfer' | column -t;
     fi
     done;
     sed -i "s|brotli_comp_level .*|brotli_comp_level 5;|" /usr/local/nginx/conf/brotli_inc.conf
