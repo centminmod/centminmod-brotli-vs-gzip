@@ -8,673 +8,361 @@ test-gzip_comp_level-1
 http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 12.79 KiB
-Requests/sec:  3162.27
+Requests/sec:  3361.57
 
 test-gzip_comp_level-2 
 http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 12.74 KiB
-Requests/sec:  2755.15
+Requests/sec:  3042.10
 
 test-gzip_comp_level-3 
 http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 12.51 KiB
-Requests/sec:  2316.87
+Requests/sec:  2621.93
 
 test-gzip_comp_level-4 
 http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 12.23 KiB
-Requests/sec:  1826.64
+Requests/sec:  2344.31
 
 test-gzip_comp_level-5 
 http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.52 KiB
-Requests/sec:  1661.37
+Requests/sec:  1806.87
 
 test-gzip_comp_level-6 
 http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.50 KiB
-Requests/sec:  1287.92
+Requests/sec:  1446.82
 
 test-gzip_comp_level-7 
 http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.37 KiB
-Requests/sec:  915.23
+Requests/sec:  928.38
 
 test-gzip_comp_level-8 
 http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.36 KiB
-Requests/sec:  241.92
+Requests/sec:  233.01
 
 test-gzip_comp_level-9 
 http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.36 KiB
-Requests/sec:  258.48
-reset defaults:
-gzip_comp_level 5;
+Requests/sec:  258.02
 
 test-gzip_comp_level-1 
 http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 33.29 KiB
-Requests/sec:  1019.55
+Requests/sec:  1012.76
 
 test-gzip_comp_level-2 
 http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 32.36 KiB
-Requests/sec:  1089.67
+Requests/sec:  1069.76
 
 test-gzip_comp_level-3 
 http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 31.93 KiB
-Requests/sec:  956.62
+Requests/sec:  939.02
 
 test-gzip_comp_level-4 
 http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 30.60 KiB
-Requests/sec:  825.25
+Requests/sec:  861.24
 
 test-gzip_comp_level-5 
 http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.75 KiB
-Requests/sec:  659.81
+Requests/sec:  637.00
 
 test-gzip_comp_level-6 
 http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.64 KiB
-Requests/sec:  571.60
+Requests/sec:  545.46
 
 test-gzip_comp_level-7 
 http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.59 KiB
-Requests/sec:  507.31
+Requests/sec:  503.03
 
 test-gzip_comp_level-8 
 http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.57 KiB
-Requests/sec:  458.74
+Requests/sec:  464.89
 
 test-gzip_comp_level-9 
 http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.57 KiB
-Requests/sec:  502.10
-reset defaults:
-gzip_comp_level 5;
+Requests/sec:  459.16
 
 test-gzip_comp_level-1 
 http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 29.85 KiB
-Requests/sec:  1142.30
+Requests/sec:  1279.70
 
 test-gzip_comp_level-2 
 http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 27.64 KiB
-Requests/sec:  1099.28
+Requests/sec:  1206.92
 
 test-gzip_comp_level-3 
 http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 26.04 KiB
-Requests/sec:  1221.51
+Requests/sec:  1122.95
 
 test-gzip_comp_level-4 
 http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 24.55 KiB
-Requests/sec:  1089.88
+Requests/sec:  996.33
 
 test-gzip_comp_level-5 
 http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 23.07 KiB
-Requests/sec:  823.65
+Requests/sec:  785.84
 
 test-gzip_comp_level-6 
 http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 22.74 KiB
-Requests/sec:  540.04
+Requests/sec:  584.78
 
 test-gzip_comp_level-7 
 http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 22.65 KiB
-Requests/sec:  439.11
+Requests/sec:  444.16
 
 test-gzip_comp_level-8 
 http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 22.65 KiB
-Requests/sec:  337.19
+Requests/sec:  392.44
 
 test-gzip_comp_level-9 
 http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 22.65 KiB
-Requests/sec:  363.03
-reset defaults:
-gzip_comp_level 5;
+Requests/sec:  380.38
 
 test-brotli_comp_level-1 
 http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 12.90 KiB
-Requests/sec:  1261.46
+Requests/sec:  1388.18
 
 test-brotli_comp_level-2 
 http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.70 KiB
-Requests/sec:  619.63
+Requests/sec:  633.93
 
 test-brotli_comp_level-3 
 http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.69 KiB
-Requests/sec:  481.45
+Requests/sec:  600.19
 
 test-brotli_comp_level-4 
 http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.57 KiB
-Requests/sec:  342.88
+Requests/sec:  395.75
 
 test-brotli_comp_level-5 
 http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.09 KiB
-Requests/sec:  232.11
+Requests/sec:  260.17
 
 test-brotli_comp_level-6 
 http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.07 KiB
-Requests/sec:  222.04
+Requests/sec:  238.67
 
 test-brotli_comp_level-7 
 http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.06 KiB
-Requests/sec:  198.98
+Requests/sec:  201.51
 
 test-brotli_comp_level-8 
 http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.05 KiB
-Requests/sec:  169.44
+Requests/sec:  172.63
 
 test-brotli_comp_level-9 
 http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 11.04 KiB
-Requests/sec:  114.15
-reset defaults:
-brotli_comp_level 5;
+Requests/sec:  125.28
 
 test-brotli_comp_level-1 
 http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 34.12 KiB
-Requests/sec:  487.35
+Requests/sec:  531.04
 
 test-brotli_comp_level-2 
 http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 31.56 KiB
-Requests/sec:  296.59
+Requests/sec:  280.89
 
 test-brotli_comp_level-3 
 http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 31.27 KiB
-Requests/sec:  239.55
+Requests/sec:  304.13
 
 test-brotli_comp_level-4 
 http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 30.54 KiB
-Requests/sec:  187.66
+Requests/sec:  182.03
 
 test-brotli_comp_level-5 
 http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 29.01 KiB
-Requests/sec:  128.06
+Requests/sec:  120.10
 
 test-brotli_comp_level-6 
 http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.83 KiB
-Requests/sec:  101.12
+Requests/sec:  93.55
 
 test-brotli_comp_level-7 
 http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.75 KiB
-Requests/sec:  57.27
+Requests/sec:  62.71
 
 test-brotli_comp_level-8 
 http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.73 KiB
-Requests/sec:  49.22
+Requests/sec:  53.89
 
 test-brotli_comp_level-9 
 http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.70 KiB
-Requests/sec:  29.43
-reset defaults:
-brotli_comp_level 5;
+Requests/sec:  34.82
 
 test-brotli_comp_level-1 
 http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 28.53 KiB
-Requests/sec:  504.76
+Requests/sec:  494.28
 
 test-brotli_comp_level-2 
 http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 26.20 KiB
-Requests/sec:  281.71
+Requests/sec:  244.04
 
 test-brotli_comp_level-3 
 http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 25.04 KiB
-Requests/sec:  214.37
+Requests/sec:  258.95
 
 test-brotli_comp_level-4 
 http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 23.85 KiB
-Requests/sec:  174.68
+Requests/sec:  185.12
 
 test-brotli_comp_level-5 
 http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 20.28 KiB
-Requests/sec:  126.34
+Requests/sec:  97.61
 
 test-brotli_comp_level-6 
 http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 19.88 KiB
-Requests/sec:  98.93
+Requests/sec:  96.85
 
 test-brotli_comp_level-7 
 http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 19.70 KiB
-Requests/sec:  62.92
+Requests/sec:  64.17
 
 test-brotli_comp_level-8 
 http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 19.56 KiB
-Requests/sec:  50.65
+Requests/sec:  48.60
 
 test-brotli_comp_level-9 
 http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 19.43 KiB
-Requests/sec:  33.55
-reset defaults:
-brotli_comp_level 5;
+Requests/sec:  36.42
 
-test-gzip_comp_level-1 precompress
+test-gzip_comp_level precompress
 http://localhost/fontawesome.css (gzip)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 10.39 KiB
-Requests/sec:  13793.36
+Requests/sec:  14625.34
 
-test-gzip_comp_level-2 precompress
-http://localhost/fontawesome.css (gzip)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 10.39 KiB
-Requests/sec:  13810.78
-
-test-gzip_comp_level-3 precompress
-http://localhost/fontawesome.css (gzip)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 10.39 KiB
-Requests/sec:  15961.96
-
-test-gzip_comp_level-4 precompress
-http://localhost/fontawesome.css (gzip)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 10.39 KiB
-Requests/sec:  13481.35
-
-test-gzip_comp_level-5 precompress
-http://localhost/fontawesome.css (gzip)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 10.39 KiB
-Requests/sec:  12768.38
-
-test-gzip_comp_level-6 precompress
-http://localhost/fontawesome.css (gzip)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 10.39 KiB
-Requests/sec:  10851.48
-
-test-gzip_comp_level-7 precompress
-http://localhost/fontawesome.css (gzip)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 10.39 KiB
-Requests/sec:  13222.86
-
-test-gzip_comp_level-8 precompress
-http://localhost/fontawesome.css (gzip)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 10.39 KiB
-Requests/sec:  14369.38
-
-test-gzip_comp_level-9 precompress
-http://localhost/fontawesome.css (gzip)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 10.39 KiB
-Requests/sec:  14170.12
-reset defaults:
-gzip_comp_level 5;
-
-test-gzip_comp_level-1 precompress
+test-gzip_comp_level precompress
 http://localhost/jquery-3.3.1.min.js (gzip)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 28.57 KiB
-Requests/sec:  12024.80
+Requests/sec:  12508.26
 
-test-gzip_comp_level-2 precompress
-http://localhost/jquery-3.3.1.min.js (gzip)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 28.57 KiB
-Requests/sec:  14204.29
-
-test-gzip_comp_level-3 precompress
-http://localhost/jquery-3.3.1.min.js (gzip)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 28.57 KiB
-Requests/sec:  12021.98
-
-test-gzip_comp_level-4 precompress
-http://localhost/jquery-3.3.1.min.js (gzip)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 28.57 KiB
-Requests/sec:  11045.56
-
-test-gzip_comp_level-5 precompress
-http://localhost/jquery-3.3.1.min.js (gzip)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 28.57 KiB
-Requests/sec:  13042.16
-
-test-gzip_comp_level-6 precompress
-http://localhost/jquery-3.3.1.min.js (gzip)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 28.57 KiB
-Requests/sec:  12093.35
-
-test-gzip_comp_level-7 precompress
-http://localhost/jquery-3.3.1.min.js (gzip)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 28.57 KiB
-Requests/sec:  13791.47
-
-test-gzip_comp_level-8 precompress
-http://localhost/jquery-3.3.1.min.js (gzip)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 28.57 KiB
-Requests/sec:  11928.07
-
-test-gzip_comp_level-9 precompress
-http://localhost/jquery-3.3.1.min.js (gzip)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 28.57 KiB
-Requests/sec:  13226.65
-reset defaults:
-gzip_comp_level 5;
-
-test-gzip_comp_level-1 precompress
+test-gzip_comp_level precompress
 http://localhost/bootstrap.min.css (gzip)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 20.61 KiB
-Requests/sec:  14234.05
+Requests/sec:  12588.12
 
-test-gzip_comp_level-2 precompress
-http://localhost/bootstrap.min.css (gzip)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 20.61 KiB
-Requests/sec:  12496.41
-
-test-gzip_comp_level-3 precompress
-http://localhost/bootstrap.min.css (gzip)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 20.61 KiB
-Requests/sec:  19430.99
-
-test-gzip_comp_level-4 precompress
-http://localhost/bootstrap.min.css (gzip)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 20.61 KiB
-Requests/sec:  12778.33
-
-test-gzip_comp_level-5 precompress
-http://localhost/bootstrap.min.css (gzip)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 20.61 KiB
-Requests/sec:  13041.93
-
-test-gzip_comp_level-6 precompress
-http://localhost/bootstrap.min.css (gzip)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 20.61 KiB
-Requests/sec:  12725.50
-
-test-gzip_comp_level-7 precompress
-http://localhost/bootstrap.min.css (gzip)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 20.61 KiB
-Requests/sec:  15107.26
-
-test-gzip_comp_level-8 precompress
-http://localhost/bootstrap.min.css (gzip)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 20.61 KiB
-Requests/sec:  13700.29
-
-test-gzip_comp_level-9 precompress
-http://localhost/bootstrap.min.css (gzip)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 20.61 KiB
-Requests/sec:  12713.30
-reset defaults:
-gzip_comp_level 5;
-
-test-brotli_comp_level-1 precompress
+test-brotli_comp_level precompress
 http://localhost/fontawesome.css (br)
 Uncompressed-size: 53.17 KiB
 Compressed-size: 9.38 KiB
-Requests/sec:  14586.24
+Requests/sec:  15153.08
 
-test-brotli_comp_level-2 precompress
-http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-Requests/sec:  15355.90
-
-test-brotli_comp_level-3 precompress
-http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-Requests/sec:  14955.90
-
-test-brotli_comp_level-4 precompress
-http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-Requests/sec:  14593.02
-
-test-brotli_comp_level-5 precompress
-http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-Requests/sec:  13565.08
-
-test-brotli_comp_level-6 precompress
-http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-Requests/sec:  13817.21
-
-test-brotli_comp_level-7 precompress
-http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-Requests/sec:  15184.66
-
-test-brotli_comp_level-8 precompress
-http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-Requests/sec:  13298.01
-
-test-brotli_comp_level-9 precompress
-http://localhost/fontawesome.css (br)
-Uncompressed-size: 53.17 KiB
-Compressed-size: 9.38 KiB
-Requests/sec:  14492.11
-reset defaults:
-brotli_comp_level 5;
-
-test-brotli_comp_level-1 precompress
+test-brotli_comp_level precompress
 http://localhost/jquery-3.3.1.min.js (br)
 Uncompressed-size: 84.88 KiB
 Compressed-size: 26.85 KiB
-Requests/sec:  12937.42
+Requests/sec:  12517.74
 
-test-brotli_comp_level-2 precompress
-http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-Requests/sec:  13174.68
-
-test-brotli_comp_level-3 precompress
-http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-Requests/sec:  14370.63
-
-test-brotli_comp_level-4 precompress
-http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-Requests/sec:  14571.88
-
-test-brotli_comp_level-5 precompress
-http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-Requests/sec:  13376.77
-
-test-brotli_comp_level-6 precompress
-http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-Requests/sec:  14432.12
-
-test-brotli_comp_level-7 precompress
-http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-Requests/sec:  15151.63
-
-test-brotli_comp_level-8 precompress
-http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-Requests/sec:  12760.84
-
-test-brotli_comp_level-9 precompress
-http://localhost/jquery-3.3.1.min.js (br)
-Uncompressed-size: 84.88 KiB
-Compressed-size: 26.85 KiB
-Requests/sec:  13330.00
-reset defaults:
-brotli_comp_level 5;
-
-test-brotli_comp_level-1 precompress
+test-brotli_comp_level precompress
 http://localhost/bootstrap.min.css (br)
 Uncompressed-size: 152.10 KiB
 Compressed-size: 16.74 KiB
-Requests/sec:  15302.49
-
-test-brotli_comp_level-2 precompress
-http://localhost/bootstrap.min.css (br)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 16.74 KiB
-Requests/sec:  15965.73
-
-test-brotli_comp_level-3 precompress
-http://localhost/bootstrap.min.css (br)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 16.74 KiB
-Requests/sec:  13853.20
-
-test-brotli_comp_level-4 precompress
-http://localhost/bootstrap.min.css (br)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 16.74 KiB
-Requests/sec:  14420.88
-
-test-brotli_comp_level-5 precompress
-http://localhost/bootstrap.min.css (br)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 16.74 KiB
-Requests/sec:  15001.85
-
-test-brotli_comp_level-6 precompress
-http://localhost/bootstrap.min.css (br)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 16.74 KiB
-Requests/sec:  17022.00
-
-test-brotli_comp_level-7 precompress
-http://localhost/bootstrap.min.css (br)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 16.74 KiB
-Requests/sec:  13660.94
-
-test-brotli_comp_level-8 precompress
-http://localhost/bootstrap.min.css (br)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 16.74 KiB
-Requests/sec:  17523.18
-
-test-brotli_comp_level-9 precompress
-http://localhost/bootstrap.min.css (br)
-Uncompressed-size: 152.10 KiB
-Compressed-size: 16.74 KiB
-Requests/sec:  14878.66
-reset defaults:
-brotli_comp_level 5;
+Requests/sec:  14108.05
 ```
 
 ```

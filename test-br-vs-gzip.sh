@@ -6,6 +6,8 @@ debug='n'
 users=50
 duration=2
 sleep=1
+# max compression level to test
+max=9
 
 setup() {
   wget https://code.jquery.com/jquery-3.3.1.min.js -O /usr/local/nginx/html/jquery-3.3.1.min.js >/dev/null 2>&1
@@ -22,11 +24,19 @@ setup() {
 
 gziptests() {
   precomp=$1
+  if [[ "$precomp" = 'precompress' ]]; then
+    max=1
+  fi
   urls='http://localhost/fontawesome.css http://localhost/jquery-3.3.1.min.js http://localhost/bootstrap.min.css'
   for url in $urls; do
-    for l in {1..9}; do
+    for l in $(seq 1 $max); do
     sleep $sleep;
-    echo -e "\ntest-gzip_comp_level-${l} $precomp";
+    if [[ "$precomp" = 'precompress' ]]; then
+      compl=""
+    else
+      compl="-${l}"
+    fi
+    echo -e "\ntest-gzip_comp_level${compl} $precomp";
     sed -ie "s|BROTLI=.*|BROTLI='n'|" /usr/local/bin/curltest
     filename=$(basename $url)
     filepath="/usr/local/nginx/html/$filename"
@@ -49,8 +59,10 @@ gziptests() {
     fi
     done;
     sed -i "s|gzip_comp_level .*|gzip_comp_level 5;|" /usr/local/nginx/conf/nginx.conf
-    echo -e "reset defaults:"
-    grep gzip_comp_level /usr/local/nginx/conf/nginx.conf
+    if [[ "$debug" = [yY] ]]; then
+      echo -e "reset defaults:"
+      grep gzip_comp_level /usr/local/nginx/conf/nginx.conf
+    fi
     if [[ -f ${filepath}.gz ]]; then
       rm -rf ${filepath}.gz
     fi
@@ -59,11 +71,19 @@ gziptests() {
 
 brotlitests() {
   precomp=$1
+  if [[ "$precomp" = 'precompress' ]]; then
+    max=1
+  fi
   urls='http://localhost/fontawesome.css http://localhost/jquery-3.3.1.min.js http://localhost/bootstrap.min.css'
   for url in $urls; do
-    for l in {1..9}; do
+    for l in $(seq 1 $max); do
     sleep $sleep;
-    echo -e "\ntest-brotli_comp_level-${l} $precomp";
+    if [[ "$precomp" = 'precompress' ]]; then
+      compl=""
+    else
+      compl="-${l}"
+    fi
+    echo -e "\ntest-brotli_comp_level${compl} $precomp";
     sed -ie "s|BROTLI=.*|BROTLI='y'|" /usr/local/bin/curltest
     filename=$(basename $url)
     filepath="/usr/local/nginx/html/$filename"
@@ -86,8 +106,10 @@ brotlitests() {
     fi
     done;
     sed -i "s|brotli_comp_level .*|brotli_comp_level 5;|" /usr/local/nginx/conf/brotli_inc.conf
-    echo -e "reset defaults:"
-    grep brotli_comp_level /usr/local/nginx/conf/brotli_inc.conf
+    if [[ "$debug" = [yY] ]]; then
+      echo -e "reset defaults:"
+      grep brotli_comp_level /usr/local/nginx/conf/brotli_inc.conf
+    fi
     if [[ -f ${filepath}.br ]]; then
       rm -rf ${filepath}.br
     fi
