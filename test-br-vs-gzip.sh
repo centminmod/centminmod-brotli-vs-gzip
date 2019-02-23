@@ -3,8 +3,8 @@
 # centmin mod nginx brotli vs gzip testing
 #################################################
 users=10
-duration=6
-sleep=3
+duration=2
+sleep=1
 
 setup() {
   wget https://code.jquery.com/jquery-3.3.1.min.js -O /usr/local/nginx/html/jquery-3.3.1.min.js >/dev/null 2>&1
@@ -35,7 +35,7 @@ gziptests() {
     sed -i "s|gzip_comp_level .*|gzip_comp_level $l;|" /usr/local/nginx/conf/nginx.conf
     grep gzip_comp_level /usr/local/nginx/conf/nginx.conf
     ngxrestart >/dev/null 2>&1;
-    /usr/local/bin/curltest gzip $url;
+    /usr/local/bin/curltest gzip $url | sed -e 's|pressed size :|pressed-size:|g' -e 's|pressed size   :|pressed-size:|g';
     echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url"
     wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: gzip' --breakout $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;
     done;
@@ -64,7 +64,7 @@ brotlitests() {
     sed -i "s|brotli_comp_level .*|brotli_comp_level $l;|" /usr/local/nginx/conf/brotli_inc.conf
     grep brotli_comp_level /usr/local/nginx/conf/brotli_inc.conf
     ngxrestart >/dev/null 2>&1;
-    /usr/local/bin/curltest br $url;
+    /usr/local/bin/curltest br $url | sed -e 's|pressed size :|pressed-size:|g' -e 's|pressed size   :|pressed-size:|g';
     echo "wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url"
     wrk-cmm -t1 -c${users} -d${duration}s --breakout -H 'Accept-Encoding: br' --latency $url 2>&1 | egrep -A1 'Thread Stats|Requests/sec' | grep -v '\-\-' | sed -e 's|Thread Stats|Thread-Stats|' -e 's|+/-||' | column -t;
     done;
@@ -78,7 +78,9 @@ brotlitests() {
 }
 
 setup
+{
 gziptests
 brotlitests
 gziptests precompress
 brotlitests precompress
+} 2>&1 | tee result.txt
