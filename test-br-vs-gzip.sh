@@ -2,12 +2,13 @@
 #################################################
 # centmin mod nginx brotli vs gzip testing
 #################################################
+ver='0.1'
 debug='n'
-users=50
-duration=2
-sleep=1
+users='50'
+duration='2'
+sleep='1'
 # max compression level to test
-max=9
+max='6'
 
 setup() {
   wget https://code.jquery.com/jquery-3.3.1.min.js -O /usr/local/nginx/html/jquery-3.3.1.min.js >/dev/null 2>&1
